@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/medal.png" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favoritos — GameExplorer</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a class="nav-brand" href="/">🎮 GameExplorer</a>
+      <span class="nav-link active">♥ Favoritos</span>
+    </nav>
+
+    <header class="hero">
+      <h1 class="title">♥ Mis favoritos</h1>
+
+      <!-- Controles para filtrar / ordenar favoritos -->
+      <div class="fav-controls">
+        <input
+          type="search"
+          id="fav-search"
+          placeholder="Filtrar favoritos..."
+          autocomplete="off"
+        />
+        <select id="fav-ordering">
+          <option value="name">Nombre A→Z</option>
+          <option value="-name">Nombre Z→A</option>
+          <option value="-rating" selected>Mejor valorados</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Contador -->
+    <p id="fav-count" class="fav-count"></p>
+
+    <!-- Grid de favoritos -->
+    <main class="results" id="fav-grid"></main>
+
+    <!-- Estado vacío -->
+    <div id="fav-empty" class="fav-empty hidden">
+      <p>No tenés juegos guardados aún.</p>
+      <a href="/">Explorar juegos →</a>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

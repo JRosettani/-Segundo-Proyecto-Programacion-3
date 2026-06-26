@@ -1,0 +1,63 @@
+/* ============================================================
+   favorites/style.css  –  estilos exclusivos de favoritos
+   ============================================================ */
+
+/* Controles de búsqueda y orden */
+.fav-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.fav-controls input[type="search"] {
+  width: 260px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.fav-controls select {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Contador */
+.fav-count {
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+  margin: 10px 0 0;
+}
+
+/* Estado vacío */
+.fav-empty {
+  text-align: center;
+  margin: 60px auto;
+  color: #888;
+}
+.fav-empty p  { font-size: 18px; margin-bottom: 16px; }
+.fav-empty a  { color: #7b8ff5; text-decoration: none; font-size: 16px; }
+.fav-empty a:hover { text-decoration: underline; }
+
+/* Botón quitar (reemplaza btn-fav en esta página) */
+.btn-remove {
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid #e05050;
+  color: #e05050;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+.btn-remove:hover { background: rgba(224,80,80,0.15); }
+
+.hidden { display: none !important; }

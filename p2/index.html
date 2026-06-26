@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/joystick.png" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameExplorer</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <span class="nav-brand">🎮 GameExplorer</span>
+      <a class="nav-link" href="/src/pages/favorites/index.html">♥ Favoritos</a>
+    </nav>
+
+    <!-- Hero / búsqueda -->
+    <header class="hero">
+      <h1 class="title">¿En qué juego pensás hoy?</h1>
+      <form>
+        <input
+          type="search"
+          id="search"
+          placeholder="Buscar juego..."
+          autocomplete="off"
+        />
+        <button id="btn-search" type="submit">Buscar</button>
+      </form>
+    </header>
+
+    <!-- Filtros -->
+    <section class="filters">
+      <select id="filter-genre">
+        <option value="">Todos los géneros</option>
+        <option value="action">Acción</option>
+        <option value="adventure">Aventura</option>
+        <option value="rpg">RPG</option>
+        <option value="shooter">Shooter</option>
+        <option value="strategy">Estrategia</option>
+        <option value="puzzle">Puzzle</option>
+        <option value="sports">Deportes</option>
+        <option value="racing">Carreras</option>
+        <option value="simulation">Simulación</option>
+        <option value="indie">Indie</option>
+      </select>
+
+      <select id="filter-platform">
+        <option value="">Todas las plataformas</option>
+        <option value="4">PC</option>
+        <option value="187">PS5</option>
+        <option value="18">PS4</option>
+        <option value="186">Xbox Series X</option>
+        <option value="1">Xbox One</option>
+        <option value="7">Nintendo Switch</option>
+      </select>
+
+      <select id="filter-ordering">
+        <option value="-rating">Mejor valorados</option>
+        <option value="-released">Más recientes</option>
+        <option value="released">Más antiguos</option>
+        <option value="name">Nombre A→Z</option>
+        <option value="-name">Nombre Z→A</option>
+        <option value="-metacritic">Mayor Metacritic</option>
+      </select>
+    </section>
+
+    <!-- Mensaje de error -->
+    <p id="error-msg" class="error-msg"></p>
+
+    <!-- Grid de resultados -->
+    <main class="results"></main>
+
+    <!-- Paginación -->
+    <button id="btn-show-more">Más juegos ↓</button>
+
+    <!-- Modal de detalle rápido (no usado en main, se abre desde info) -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <button id="modal-close" class="modal-close">✕</button>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

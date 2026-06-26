@@ -1,0 +1,183 @@
+/* ============================================================
+   info/style.css  –  estilos exclusivos de la página de detalle
+   ============================================================ */
+
+/* Botón volver */
+.btn-back {
+  display: inline-block;
+  margin: 20px 24px;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+.btn-back:hover { color: #fff; }
+
+/* Hero con imagen de fondo */
+.detail-hero {
+  width: 100%;
+  min-height: 360px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.detail-hero-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 100%);
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px 40px;
+  gap: 10px;
+}
+
+.detail-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 15px;
+  color: #ccc;
+}
+
+/* Metacritic badge */
+.mc-badge {
+  border: 2px solid;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.detail-rating { color: #facc15; font-weight: 600; }
+
+/* Botón favorito en detalle */
+.btn-fav-detail {
+  align-self: flex-start;
+  padding: 8px 20px;
+  border: 2px solid #4c5baf;
+  background: transparent;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s, border-color 0.2s;
+  margin-top: 8px;
+}
+.btn-fav-detail:hover  { background: rgba(76,91,175,0.3); }
+.btn-fav-detail.active { background: #4c5baf; border-color: #4c5baf; }
+
+/* Cuerpo del detalle */
+.detail-body {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.detail-section h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #888;
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+.detail-section p,
+.detail-section a {
+  color: #ddd;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.detail-link {
+  word-break: break-all;
+  color: #7b8ff5;
+  text-decoration: none;
+}
+.detail-link:hover { text-decoration: underline; }
+
+/* Descripción (viene como HTML de la API) */
+.description-text {
+  color: #ccc;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.description-text p { margin: 0 0 12px; }
+.description-text a { color: #7b8ff5; }
+
+/* Tags */
+.tags-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+  background: rgba(255,255,255,0.07);
+  color: #bbb;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 13px;
+}
+
+/* Screenshots grid */
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+}
+.screenshot {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.screenshot:hover { transform: scale(1.02); opacity: 0.9; }
+
+/* Modal de imagen ampliada */
+.img-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  cursor: zoom-out;
+}
+.img-modal img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+  cursor: default;
+}
+.img-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  background: rgba(0,0,0,0.5);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .detail-title { font-size: 1.6rem; }
+  .detail-hero-overlay { padding: 20px 16px; }
+  .detail-body { padding: 20px 16px 40px; }
+}

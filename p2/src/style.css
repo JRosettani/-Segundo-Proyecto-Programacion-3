@@ -1,0 +1,335 @@
+/* ============================================================
+   style.css  –  estilos globales compartidos entre las 3 páginas
+   ============================================================ */
+
+/* ── Reset y base ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Navbar ───────────────────────────────────────────────── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-brand {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-link {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: #fff;
+}
+
+/* ── Hero / cabecera de página ─────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 48px 20px 28px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 28px;
+  background: linear-gradient(135deg, #7b8ff5, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Formulario de búsqueda ────────────────────────────────── */
+form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+#search {
+  width: 100%;
+  max-width: 420px;
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+#search::placeholder {
+  color: #888;
+}
+#search:focus {
+  border-color: #4c5baf;
+}
+
+#btn-search {
+  padding: 10px 24px;
+  background: #4c5baf;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#btn-search:hover {
+  background: #3f4e9e;
+}
+
+/* ── Filtros ──────────────────────────────────────────────── */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 0 20px 24px;
+}
+
+.filters select {
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ddd;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.filters select:hover,
+.filters select:focus {
+  border-color: #4c5baf;
+}
+
+/* ── Mensaje de error ─────────────────────────────────────── */
+.error-msg {
+  text-align: center;
+  color: #f87171;
+  font-size: 15px;
+  min-height: 22px;
+  margin: 0 0 8px;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 8px 24px 40px;
+}
+
+/* ── Tarjeta ───────────────────────────────────────────────── */
+.search-result {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  overflow: hidden;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.search-result:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.search-result:hover .card-img-wrapper img {
+  transform: scale(1.04);
+}
+
+/* Rating flotante sobre la imagen */
+.card-rating {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-genres {
+  color: #888;
+  font-size: 13px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.btn-info {
+  flex: 1;
+  padding: 7px 10px;
+  background: #4c5baf;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+.btn-info:hover {
+  background: #3f4e9e;
+}
+
+.btn-fav {
+  padding: 7px 12px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #aaa;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+.btn-fav:hover {
+  color: #fff;
+  border-color: #fff;
+}
+.btn-fav.active {
+  color: #f87171;
+  border-color: #f87171;
+}
+
+/* ── Botón "Más juegos" ─────────────────────────────────────── */
+#btn-show-more {
+  display: none;
+  background: #4c5baf;
+  border: none;
+  color: white;
+  padding: 12px 32px;
+  margin: 0 auto 48px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+#btn-show-more:hover {
+  background: #3f4e9e;
+}
+#btn-show-more:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* ── Detalle container (base compartida) ───────────────────── */
+.detail-container {
+  min-height: 70vh;
+}
+.loading-msg {
+  text-align: center;
+  padding: 60px 20px;
+  color: #888;
+  font-size: 18px;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .navbar {
+    padding: 12px 16px;
+  }
+  .results {
+    grid-template-columns: 1fr;
+    padding: 8px 16px 40px;
+  }
+  form {
+    flex-direction: column;
+    align-items: center;
+  }
+  #search {
+    max-width: 100%;
+  }
+  .filters {
+    gap: 8px;
+  }
+  .filters select {
+    font-size: 13px;
+  }
+}
